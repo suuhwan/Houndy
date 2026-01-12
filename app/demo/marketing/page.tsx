@@ -5,16 +5,19 @@ import Footer from '@/components/marketing/Footer';
 
 import Features from '@/components/marketing/Features';
 import Testimonials from '@/components/marketing/Testimonials';
+import MarketingLoader from '@/components/marketing/MarketingLoader';
 
 export default function MarketingPage() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Hero />
-      <Features />
-      <About />
-      <Team />
-      <Testimonials />
-      <Footer />
+      <MarketingLoader>
+        <Hero />
+        <Features />
+        <About />
+        <Team />
+        <Testimonials />
+        <Footer />
+      </MarketingLoader>
     </main>
   );
 }
