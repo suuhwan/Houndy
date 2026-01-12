@@ -1,14 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import NextImage from 'next/image';
 
 const stats = [
   { label: 'Hackathons', value: '25', colSpan: 1, type: 'stat' },
   { label: 'Developers', value: '600k+', colSpan: 1, type: 'stat' },
   { label: 'Prizes Won', value: '$550k', colSpan: 1, type: 'stat' },
-  { type: 'image', colSpan: 1, src: '', bg: 'bg-indigo-900' },
-  { type: 'image', colSpan: 2, src: '', bg: 'bg-purple-900' },
-  { type: 'image', colSpan: 1, src: '', bg: 'bg-blue-900' },
+  { type: 'image', colSpan: 1, src: '/images/about-hackathon.png', bg: 'bg-indigo-900' },
+  { type: 'image', colSpan: 2, src: '/images/about-network.png', bg: 'bg-purple-900' },
+  { type: 'image', colSpan: 1, src: '/images/about-education.png', bg: 'bg-blue-900' },
 ];
 
 export default function About() {
@@ -43,9 +44,15 @@ export default function About() {
                 <span className="text-gray-400 uppercase tracking-wider text-sm">{item.label}</span>
               </>
             )}
-            {item.type === 'image' && (
-               <div className="absolute inset-0 flex items-center justify-center text-white/20 font-bold text-2xl">
-                 IMAGE
+            {item.type === 'image' && item.src && (
+               <div className="absolute inset-0">
+                 <NextImage 
+                   src={item.src}  
+                   alt="About Us" 
+                   fill 
+                   className="object-cover hover:scale-105 transition-transform duration-700"
+                 />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                </div>
             )}
             

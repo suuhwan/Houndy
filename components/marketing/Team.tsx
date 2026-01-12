@@ -1,19 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import NextImage from 'next/image';
 
 const leaders = [
-  { name: 'Phil Kwok', role: 'Co-Founder', bio: 'Former Cambridge researcher...', color: 'from-blue-500/20 to-purple-500/20' },
-  { name: 'Dom Kwok', role: 'Co-Founder', bio: 'Ex-Goldman Sachs...', color: 'from-purple-500/20 to-pink-500/20' },
+  { name: 'Phil Kwok', role: 'Co-Founder', bio: 'Former Cambridge researcher...', color: 'from-blue-500/20 to-purple-500/20', avatar: '/images/avatar-1.png' },
+  { name: 'Dom Kwok', role: 'Co-Founder', bio: 'Ex-Goldman Sachs...', color: 'from-purple-500/20 to-pink-500/20', avatar: '/images/avatar-2.png' },
 ];
 
 const team = [
-  { name: 'Martin', role: 'Engineering' },
-  { name: 'Noah', role: 'Product' },
-  { name: 'Zubel', role: 'Design' },
-  { name: 'Charlotte', role: 'Marketing' },
-  { name: 'George', role: 'Operations' },
-  { name: 'Bilwan', role: 'Strategy' },
+  { name: 'Martin', role: 'Engineering', avatar: '/images/avatar-3.png' },
+  { name: 'Noah', role: 'Product', avatar: '/images/avatar-4.png' },
+  { name: 'Zubel', role: 'Design', avatar: '/images/avatar-3.png' },
+  { name: 'Charlotte', role: 'Marketing', avatar: '/images/avatar-4.png' },
+  { name: 'George', role: 'Operations', avatar: '/images/avatar-3.png' },
+  { name: 'Bilwan', role: 'Strategy', avatar: '/images/avatar-4.png' },
 ];
 
 export default function Team() {
@@ -33,8 +34,7 @@ export default function Team() {
               <div aria-hidden="true" className={`absolute inset-0 bg-gradient-to-br ${leader.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
               <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-700 rounded-full flex-shrink-0 relative z-10 overflow-hidden">
-                {/* Placeholder Avatar */}
-                <div className="w-full h-full bg-linear-to-tr from-gray-600 to-gray-800" /> 
+                <NextImage src={leader.avatar} alt={leader.name} fill className="object-cover" /> 
               </div>
               <div className="relative z-10">
                 <h4 className="text-2xl font-bold font-heading">{leader.name}</h4>
@@ -58,7 +58,9 @@ export default function Team() {
               transition={{ delay: i * 0.05 }}
               className="bg-surface/30 border border-white/5 rounded-2xl p-4 text-center hover:bg-surface/50 transition-colors"
             >
-              <div className="w-20 h-20 bg-gray-700 rounded-full mx-auto mb-3" />
+              <div className="w-20 h-20 bg-gray-700 rounded-full mx-auto mb-3 relative overflow-hidden">
+                <NextImage src={member.avatar} alt={member.name} fill className="object-cover" />
+              </div>
               <h5 className="font-bold">{member.name}</h5>
               <p className="text-xs text-gray-400">{member.role}</p>
             </motion.div>

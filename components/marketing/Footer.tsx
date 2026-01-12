@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Twitter, Linkedin, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -12,7 +12,7 @@ export default function Footer() {
         
         <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 relative z-10">Download the App</h2>
         <p className="text-gray-400 mb-10 max-w-lg mx-auto relative z-10">
-          Learn about the world's leading blockchains, right from your phone.
+          Learn about the world&apos;s leading blockchains, right from your phone.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
